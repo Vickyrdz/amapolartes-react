@@ -1,0 +1,38 @@
+.CardItem {
+    width: 200px;
+    padding: 30px;
+    margin: 30px;
+    font-size: 10px;
+    background-color: papayawhip;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+}
+
+.tarjeta {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+}
+
+.card-img-top {
+    max-height: 320px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+} 
+.precio {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.boton-detalle {
+    background-color: #299190;
+    color: white;
+    border-color: snow;
+}
+
+.btn.boton-detalle:hover {
+    border-color: #187472;
+    background-color: #095c5b;
+}

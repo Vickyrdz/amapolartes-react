@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import './ItemDetailContainer.css'
+import './ItemDetailContainer.css'
 import { getProductById } from '../../asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import Loading from '../Loading/Loading';
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
@@ -20,12 +21,12 @@ const ItemDetailContainer = () => {
     }, [productId])
 
     if(loading) {
-        return <h1>Cargando...</h1>
+        return <Loading />
     }
 
     return(
         <div className='ItemDetailContainer' >
-            <ItemDetail  {...product} />
+            <ItemDetail {...product} />
         </div>
     )
 };

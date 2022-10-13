@@ -1,0 +1,33 @@
+.Controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resta {
+    background-color: #299190;
+    color: white;
+    border-color: #299190;
+    border-bottom-style: double;
+    border-right-style: dotted;
+    font-size: 25px;
+    width: 30px;
+}
+
+.suma {
+    background-color: #299190;
+    color: white;
+    border-color: #299190;
+    border-bottom-style: double;
+    border-right-style: dotted;
+    font-size: 25px;
+    width: 30px;
+}
+
+.carrito {
+    background-color: #299190;
+    color: white;
+    border-style: none;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

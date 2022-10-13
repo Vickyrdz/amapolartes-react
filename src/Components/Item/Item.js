@@ -1,27 +1,29 @@
 import React from 'react';
-// import './Item.css'
+import './Item.css';
+import ItemCounter from '../ItemCounter/ItemCounter';
 import { Link } from 'react-router-dom'
 
-const Item = ({id, name, img, price }) => {
-
+const Item = ({ id, name, img, price, description, stock, handleOnAdd, isDetail }) => {
     return (
-        <article className="CardItem">
-            <header className="Header">
-                <h2 className="ItemHeader">
-                    {name}
-                </h2>
-            </header>
-            <picture>
-                <img src={img} alt={name} className="ItemImg"/>
-            </picture>
-            <section>
-                <p className="Info">
-                    Precio: ${price}
-                </p>
-            </section>           
-            <footer className='ItemFooter'>
-               <Link to={`/detail/${id}`}>Ver detalle</Link>
-            </footer>
+        <article className={`card tarjeta ${isDetail ? 'tarjeta-detalle': ''}`}>
+            <img src={img} className="card-img-top" alt={name} />
+            <div className="card-body">
+                <h5 className="card-title">{name}</h5>
+                {
+                    isDetail && (
+                        <div>
+                            <p>{description}</p>
+                            <ItemCounter onAdd={handleOnAdd} stock={stock} />
+                        </div>
+                    )
+                }
+                <span className='precio'>$ {price}</span>
+                {
+                    !isDetail && (
+                        <Link to={`/detail/${id}`} className="btn btn-primary boton-detalle">Ver detalle</Link>
+                    )
+                }
+            </div>
         </article>
     )
 }

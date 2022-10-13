@@ -1,0 +1,16 @@
+.navbar-brand {
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.navbar-brand:focus {
+    color: white;
+}
+
+.nav-item .nav-link.active {
+    color: white;
+    font-weight: bolder;
+}

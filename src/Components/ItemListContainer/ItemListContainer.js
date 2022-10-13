@@ -1,14 +1,9 @@
-// const ItemListContainer = ({greeting}) =>{
-//     return <h1>{greeting}</h1>
-// }
-
-// export default ItemListContainer
-
-// import './ItemListContainer.css'
 import React, { useState, useEffect } from 'react'
 import { getProducts, getProductsByCategory } from "../../asyncMock.js"
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import Loading from '../Loading/Loading';
+import './ItemListContainer.css'
 
 const ItemListContainer = ({ greeting  }) => {
     const [products, setProducts] = useState([])
@@ -32,12 +27,12 @@ const ItemListContainer = ({ greeting  }) => {
 
 
     if(loading) {
-        return <h1>Cargando...</h1>
+        return <Loading />;
     }
 
 
     return (
-        <div onClick={() => console.log('click en itemlistcontainer')}>
+        <div className="ItemListContainer" onClick={() => console.log('click en itemlistcontainer')}>
             {/* <button onClick={(e) => console.log(e)}>boton</button> */}
             <ItemList products={products} />
         </div>
