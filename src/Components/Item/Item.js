@@ -3,7 +3,8 @@ import './Item.css';
 import ItemCounter from '../ItemCounter/ItemCounter';
 import { Link } from 'react-router-dom'
 
-const Item = ({ id, name, img, price, description, stock, handleOnAdd, isDetail }) => {
+
+const Item = ({ id, name, img, price, description, stock, handleOnAdd, isDetail, showGoToCart }) => {
     return (
         <article className={`card tarjeta ${isDetail ? 'tarjeta-detalle': ''}`}>
             <img src={img} className="card-img-top" alt={name} />
@@ -13,7 +14,16 @@ const Item = ({ id, name, img, price, description, stock, handleOnAdd, isDetail 
                     isDetail && (
                         <div>
                             <p>{description}</p>
-                            <ItemCounter onAdd={handleOnAdd} stock={stock} />
+
+                            { showGoToCart ? (
+                                <div style={{display: 'grid'}}> 
+                                    <Link to={"/"} className="btn btn-primary boton-detalle">Ir al carrito</Link>
+                                    <Link to={"/"} className="btn btn-primary boton-detalle">Seguir comprando</Link>
+
+                                </div>
+                            ) : (
+                                <ItemCounter onAdd={handleOnAdd} stock={stock} />
+                            )}
                         </div>
                     )
                 }

@@ -7,7 +7,7 @@ const CartWidget = () => {
                 style={{ width: 30, height: 30, marginRight: 8}}
                 src={cart} alt="cart"
             />
-            5
+            0
         </div>   
     );
 };

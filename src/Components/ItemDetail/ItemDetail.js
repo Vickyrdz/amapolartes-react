@@ -1,13 +1,17 @@
 // import './ItemDetail.css'
+import { useState } from 'react';
 import Item from '../Item/Item';
 import ItemCounter from '../ItemCounter/ItemCounter';
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+    const [showGoToCart, setShowGoToCart] = useState(false);
+
     const handleOnAdd = (quantity) => {
         const productToAdd = {
             id, name, price, quantity
         }
         console.log(productToAdd);
+        setShowGoToCart(true);
     }
 
     return (
@@ -20,6 +24,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             stock={stock}
             handleOnAdd={handleOnAdd}
             isDetail
+            showGoToCart={showGoToCart}
         />
         // <article className="CardItem">
         //     <header className="Header">
