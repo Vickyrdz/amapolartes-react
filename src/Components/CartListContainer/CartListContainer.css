@@ -1,0 +1,28 @@
+.textEmpty {
+    font-weight: bold;
+    font-size: large;
+}
+
+.totalCart{
+    margin-top: 30px;
+    background-color: rgb(6, 184, 6);
+    color: white;
+    width: 690px;
+    display: inline-block;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.finally{
+    display: flex;
+    width: 700px;
+    justify-content: center;
+    margin-left: 290px;
+    margin-top: 15px;
+    background-color: white;
+    color: green;
+    border-color: green;
+    padding: 5px;
+    font-weight: bold;
+}

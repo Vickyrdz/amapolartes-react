@@ -1,0 +1,39 @@
+.containerCart {
+    margin-top: 50px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.cartItem {
+    padding: 30px;
+}
+
+.nameCart{
+    font-size: 20px;
+    background-color: #299190;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.descriptionCart{
+    color: black;
+    font-style: italic;
+}
+
+.btnCart{
+    background-color: #299190;
+    color: white;
+    font-weight: bold;
+    font-size: inherit;
+    padding: 5px;
+    margin-top: 25px;
+    margin-right:20px;
+}
+
+.deleteCart{
+    margin-top: 22px;
+}
+
+.buttons {
+    display: flex;
+}

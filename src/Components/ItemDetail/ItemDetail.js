@@ -1,9 +1,14 @@
-// import './ItemDetail.css'
-import { useState } from 'react';
+
+import { useContext, useState } from 'react';
 import Item from '../Item/Item';
-import ItemCounter from '../ItemCounter/ItemCounter';
+import { Context } from '../../Context/CartContext';
+import { NotificationContext } from '../../Notification/notification';
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+
+    const { addItem } = useContext(Context);
+    const {setNotification} = useContext(NotificationContext)
+
     const [showGoToCart, setShowGoToCart] = useState(false);
 
     const handleOnAdd = (quantity) => {
@@ -12,6 +17,9 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
         }
         console.log(productToAdd);
         setShowGoToCart(true);
+
+        addItem(productToAdd)
+        setNotification ('success', '¡Tu producto seleccionado ya se encuentra en el carrito!')
     }
 
     return (

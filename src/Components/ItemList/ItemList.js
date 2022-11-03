@@ -1,13 +1,25 @@
-import React from 'react';
-import Item from '../Item/Item';
-import './ItemList.css'
+import React from "react";
+import Item from "../Item/Item";
+import "./ItemList.css";
+import { useNavigate } from "react-router-dom";
 
-const ItemList = ({products, setPage }) => {
-    return(
-        <div className='ListGroup' onClick={() => console.log('hice click en itemlist')}>
-            {products.map(prod => <Item key={prod.id} {...prod} setPage={setPage}/>)}
-        </div>    
-    )
-}
+const ItemList = ({ products, setPage }) => {
+  const navigate = useNavigate();
 
-export default ItemList
+  return (
+    <>
+      <div className="ListGroup">
+        {products.map((prod) => (
+            <Item key={prod.id} {...prod} setPage={setPage} />
+        ))}
+      </div>
+      <div>
+        <button className="ComeBack arreglo" onClick={() => navigate(-1)}>
+          Volver atrás
+        </button>
+      </div>
+    </>
+  );
+};
+
+export default ItemList;

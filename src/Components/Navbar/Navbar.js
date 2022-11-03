@@ -24,15 +24,8 @@ const Navbar = () => {
                 </ul>
             </li> */}
             <li className="nav-item"><Link to="/category/mate" className="nav-link active">Mates</Link></li>
-            <li className="nav-item"><Link to="/category/combo" className="nav-link active">Combo</Link></li>
-            <li className="nav-item">
-                <a className="nav-link active" aria-current="page" style={{color:"white"}} href="#"><b>Servicios</b></a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link active" aria-current="page" style={{color:"white"}} href="#"><b>Instructivos</b></a>
-            </li><li className="nav-item">
-                <a className="nav-link active" aria-current="page"style={{color:"white"}} href="#"><b>Contacto</b></a>
-            </li>
+            <li className="nav-item"><Link to="/category/combo" className="nav-link active">Combos</Link></li>
+            
           </ul>
           <CartWidget />
        </div>

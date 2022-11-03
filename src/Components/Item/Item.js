@@ -17,7 +17,7 @@ const Item = ({ id, name, img, price, description, stock, handleOnAdd, isDetail,
 
                             { showGoToCart ? (
                                 <div style={{display: 'grid'}}> 
-                                    <Link to={"/"} className="btn btn-primary boton-detalle">Ir al carrito</Link>
+                                    <Link to={"/cart"} className="btn btn-primary boton-detalle">Ir al carrito</Link>
                                     <Link to={"/"} className="btn btn-primary boton-detalle">Seguir comprando</Link>
 
                                 </div>

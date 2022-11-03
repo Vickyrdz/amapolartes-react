@@ -25,7 +25,35 @@ const products =  [
       category: 'combo', 
       img:'/images/combo-flores-azules.jpeg', 
       stock: 5, 
-      description:'Combo 3 piezas: 2 cuencos de 10cm y tabla de algarrobo. Diseño pintado a mano.'}
+      description:'Combo 3 piezas: 2 cuencos de 10cm y tabla de algarrobo. Diseño pintado a mano.'
+    },
+
+    {id: '4', 
+      name: 'Combo Flores Rosas', 
+      price: 2500, 
+      category: 'mate', 
+      img:'/images/mate-flores-rosas.jpeg', 
+      stock: 5, 
+      description:'Con diseño de flores rosas en base negra, encontralo en combos. Producto de algarrobo pintado a mano. Incluye bombilla.'
+    },
+
+    {id: '5', 
+      name: 'Combo Flores Blancas', 
+      price: 4800, 
+      category: 'combo', 
+      img:'/images/combo-flores-blancas.jpeg', 
+      stock: 5, 
+      description:'Combo 3 piezas: incluye 1 cuenco de 10cm, mate huevito y tabla de algarrobo. Diseño pintado a mano. Consultar precio.'
+    },
+
+    {id: '6', 
+      name: 'Combo Naranja', 
+      price: 4000, 
+      category: 'combo', 
+      img:'/images/combo-naranja.jpeg', 
+      stock: 5, 
+      description:'Combo 2 piezas: Incluye 1 cuenco de 10cm y mate bolita. Elegí la combinación de colores que más te guste. Diseño pintado a mano.'
+    }
 ]
 
 export const getProducts = () => {

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading';
 import './ItemListContainer.css'
 
-const ItemListContainer = ({ greeting  }) => {
+const ItemListContainer = ({ }) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
@@ -32,8 +32,7 @@ const ItemListContainer = ({ greeting  }) => {
 
 
     return (
-        <div className="ItemListContainer" onClick={() => console.log('click en itemlistcontainer')}>
-            {/* <button onClick={(e) => console.log(e)}>boton</button> */}
+        <div className="ItemListContainer">
             <ItemList products={products} />
         </div>
     )
