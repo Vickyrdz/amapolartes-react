@@ -7,6 +7,7 @@ import "./App.css";
 import { CartProvider } from "./Context/CartContext";
 import { NotificationProvider } from "./Notification/notification";
 import CartListContainer from "./Components/CartListContainer/CartListContainer";
+import Checkout from './Components/Checkout/Checkout';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                 path="/detail/:productId"
                 element={<ItemDetailContainer />}
               />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/cart" element={<CartListContainer />} />
               <Route path="*" element={<h1>404 NOT FOUND</h1>} />
             </Routes>

@@ -1,41 +1,51 @@
-import React, { useState, useEffect } from 'react'
-import { getProducts, getProductsByCategory } from "../../asyncMock.js"
-import ItemList from '../ItemList/ItemList'
-import { useParams } from 'react-router-dom'
-import Loading from '../Loading/Loading';
-import './ItemListContainer.css'
+import React, { useState, useEffect } from "react";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import Loading from "../Loading/Loading";
+import "./ItemListContainer.css";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../services/firebase/index.js";
 
-const ItemListContainer = ({ }) => {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
+const ItemListContainer = ({}) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const { categoryId } = useParams()
+  const { categoryId } = useParams();
 
-    useEffect(() => {
-        setLoading(true)
+  useEffect(() => {
+    setLoading(true);
 
-        const asyncFunction = categoryId ? getProductsByCategory : getProducts
-       
-        asyncFunction(categoryId).then(response => {
-            setProducts(response)
-        }).catch(error => {
-            console.log(error)
-        }).finally(() => {
-            setLoading(false)
-        })  
-    }, [categoryId])
+    const collectionRef = categoryId 
+    ? query(collection(db, "products"), where('category', '==', categoryId))
+    : collection(db, "products");
 
+    getDocs(collectionRef)
+      .then((response) => {
+        const productaAdapted = response.docs.map((doc) => {
+          const data = doc.data();
 
-    if(loading) {
-        return <Loading />;
-    }
+          return { id: doc.id, ...data };
+        });
 
+        setProducts(productaAdapted);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [categoryId]);
 
-    return (
-        <div className="ItemListContainer">
-            <ItemList products={products} />
-        </div>
-    )
-}
+  if (loading) {
+    return <Loading />;
+  }
 
-export default ItemListContainer
+  return (
+    <div className="ItemListContainer">
+      <ItemList products={products} />
+    </div>
+  );
+};
+
+export default ItemListContainer;

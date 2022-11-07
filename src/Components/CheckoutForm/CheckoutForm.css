@@ -1,0 +1,33 @@
+.formContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.Form {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.input {
+    -webkit-appearance: none; 
+}
+
+.comprar {
+    background-color: #299190;
+    color: white; 
+    font-weight: bold;
+    margin: 30px;
+}
+
+.textForm {
+    font-weight: bold;
+}
+
+.comprar.btn:hover {
+    background-color: white;
+    color: #299190;
+    border-color: #299190;
+}

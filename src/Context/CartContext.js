@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
     if (!isInCart(productToAdd.id)) {
       setCart([...cart, productToAdd]);
     } else {
-      console.log("ya està en el carrito");
+    
     }
   };
 
@@ -37,8 +37,12 @@ export const CartProvider = ({ children }) => {
     return acum;
   };
 
+  const clearCart = () => {
+    setCart([])
+}
+
   return (
-    <Context.Provider value={{ cart, addItem, removeItem, totalQuantity }}>
+    <Context.Provider value={{ cart, addItem, removeItem, clearCart, totalQuantity }}>
       {children}
     </Context.Provider>
   );

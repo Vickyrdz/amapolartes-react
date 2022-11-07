@@ -12,19 +12,21 @@ const Item = ({ id, name, img, price, description, stock, handleOnAdd, isDetail,
                 <h5 className="card-title">{name}</h5>
                 {
                     isDetail && (
-                        <div>
-                            <p>{description}</p>
+                        stock ? (
+                            <div>
+                                <p>{description}</p>
 
-                            { showGoToCart ? (
-                                <div style={{display: 'grid'}}> 
-                                    <Link to={"/cart"} className="btn btn-primary boton-detalle">Ir al carrito</Link>
-                                    <Link to={"/"} className="btn btn-primary boton-detalle">Seguir comprando</Link>
+                                { showGoToCart ? (
+                                    <div style={{display: 'grid'}}> 
+                                        <Link to={"/cart"} className="btn btn-primary boton-detalle">Ir al carrito</Link>
+                                        <Link to={"/"} className="btn btn-primary boton-detalle">Seguir comprando</Link>
 
-                                </div>
-                            ) : (
-                                <ItemCounter onAdd={handleOnAdd} stock={stock} />
-                            )}
-                        </div>
+                                    </div>
+                                ) : (
+                                    <ItemCounter onAdd={handleOnAdd} stock={stock} />
+                                )}
+                            </div>
+                        ) : <span>Producto sin stock</span>
                     )
                 }
                 <span className='precio'>$ {price}</span>

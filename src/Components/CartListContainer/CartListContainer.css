@@ -5,7 +5,7 @@
 
 .totalCart{
     margin-top: 30px;
-    background-color: rgb(6, 184, 6);
+    background-color: #06b806;
     color: white;
     width: 690px;
     display: inline-block;
@@ -21,8 +21,13 @@
     margin-left: 290px;
     margin-top: 15px;
     background-color: white;
-    color: green;
-    border-color: green;
+    color: #06b806;
+    border-color: #06b806;
     padding: 5px;
     font-weight: bold;
+}
+
+.finally.btn:hover {
+    border-color: #06b806;
+    background-color: #06b806;
 }
